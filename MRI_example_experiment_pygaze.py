@@ -93,7 +93,7 @@ log.write([ready_time, "ready_screen"])
 
 # Wait for the participant to press any button to start the experiment.
 button, presstime = mri.wait_for_button_press(timeout=None)
-log.write([timer.get_time(), "ready_buttonpress"])
+log.write([timer.get_time(), "ready_press"])
 
 # Show the fixation screen.
 disp.fill(fix_screen)
@@ -110,7 +110,7 @@ while timer.get_time() - t0 < exptime:
         timeout=None)
 
     # Log the button press.
-    log.write([timer.get_time(), "button_press"])
+    log.write([timer.get_time(), "buttonpress_%s" % (button)])
 
 
 # # # # #
