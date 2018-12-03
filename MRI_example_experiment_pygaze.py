@@ -131,9 +131,6 @@ log.write([exp_end_time, "fixation_offset"])
 # Close the log file.
 log.close()
 
-# Close the MRITriggerBox.
-mri.close()
-
 # Wait until the experimenter presses a button on the keyboard.
 key, presstime = keyboard.get_key()
 
