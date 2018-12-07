@@ -57,7 +57,7 @@ class MRITriggerBox:
         print("\tDevice: %s" % (self._dev))
         print("\nChannel details:")
         print("Scanner pulse: %s" % (self._scan_chan))
-        print("Buttons: %s" % (self._buttons))
+        print("Buttons: %s" % (self._button_channels))
     
     
     def get_button_state(self, button_list=None):
@@ -246,7 +246,7 @@ class MRITriggerBox:
                 
                 # Check whether a timeout occurred.
                 if timeout is not None:
-                    timed_out = t1 - t0 < timeout
+                    timed_out = t1 - t0 > timeout
 
             # Stop the task.
             task.stop()
