@@ -241,12 +241,14 @@ class MEGTriggerBox:
                 
                 # Check whether a timeout occurred.
                 if timeout is not None:
-                    timed_out = t1 - t0 < timeout
+                    timed_out = t1 - t0 > timeout
             
             # Stop the task.
             task.stop()
-                
-        return button, t1
+        
+        RT = t1 - t0
+
+        return button, RT
     
     
     def _wait_for_button_up(self, buttons=None):
